@@ -10,7 +10,7 @@ use App\Traits\ResponseApiTrait;
 class TripsController extends Controller
 {
     use ResponseApiTrait;
-    
+
     public function index()
     {
         $trips = Trip::paginate(10);
