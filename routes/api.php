@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Trips\ShowTripController;
+use App\Http\Controllers\Trips\TripsController;
 use App\Http\Controllers\Services\OurServiceController;
 
 Route::get('/user', function (Request $request) {
@@ -11,7 +11,7 @@ Route::get('/user', function (Request $request) {
 
 
 //Show  all trpis
-Route::get('/showtrips', [ShowTripController::class, 'index']);
+Route::get('/trips', [TripsController::class, 'index']);
 
 //Show our services
 Route::get('/showservices', [OurServiceController::class, 'index']);
