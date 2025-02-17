@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\OurService;
+use App\Models\Testimonial;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -44,5 +46,10 @@ class DatabaseSeeder extends Seeder
             'image' => $faker->imageUrl(), // Random image URL
             'number_of_days' => $faker->numberBetween(5, 15), // Random number of days
         ]);
+        $this->call(PlanSeeder::class);
+        $this->call(TestimonialSeeder::class);
+        $this->call(OurServiceSeeder::class);
+
     }
+
 }
