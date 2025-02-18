@@ -41,10 +41,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Trip::create([
-            'name' => $faker->city, // Random city as trip name
-            'coast' => $faker->randomFloat(2, 1000, 5000), // Random cost
-            'image' => $faker->imageUrl(), // Random image URL
-            'number_of_days' => $faker->numberBetween(5, 15), // Random number of days
+            'name' => $faker->city,
+            'coast' => $faker->randomFloat(2, 1000, 5000),
+            'image' => $faker->imageUrl(),
+            'number_of_days' => $faker->numberBetween(5, 15),
         ]);
         $this->call(PlanSeeder::class);
         $this->call(TestimonialSeeder::class);
