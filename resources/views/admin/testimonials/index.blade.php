@@ -56,7 +56,7 @@
                                                 <td>{{ Str::limit($testimonial->content, 100) }}</td>
                                                 <td>
                                                     @if ($testimonial->image)
-                                                    <img src="{{ asset('images/' . $testimonial->image) }}" width="50" height="50" class="img-thumbnail">
+                                                    <img src="{{ asset('storage/' . $testimonial->image) }}" width="50" height="50" class="img-thumbnail">
 
                                                     @else
                                                         <span>No Image</span>

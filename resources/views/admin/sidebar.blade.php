@@ -46,7 +46,6 @@
                 <li><a><i class="fa fa-desktop"></i> Testimonials <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
 										<li><a href="/admin/testimonials/create">Add Testimonials</a></li>
-										<li><a href="/admin/testimonials/edit">Edit Testimonials</a></li>
 									</ul>
 								</li>
                 <li><a><i class="fa fa-desktop"></i> Messages <span class="fa fa-chevron-down"></span></a>

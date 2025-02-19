@@ -42,7 +42,7 @@
                                 <div class="col-md-6 col-sm-6">
                                     <input type="file" id="image" name="image" class="form-control">
                                     @if($testimonial->image)
-                                        <img src="{{ asset('uploads/testimonials/' . $testimonial->image) }}" width="100" class="mt-2">
+                                        <img src="{{ asset('storage/testimonials/' . $testimonial->image) }}" width="100" class="mt-2">
                                     @endif
                                 </div>
                             </div>
