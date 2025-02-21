@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\admin\TripController;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\admin\ContactController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -38,3 +41,18 @@ Route::prefix('admin')->name('admin.')->group(function () {
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('trips', TripController::class);
 });
+// Send Email
+Route::get('/send-test-email', function () {
+    Mail::raw('Test email', function ($message) {
+        $message->to('erenymoenes@gmail.com')->subject('Test Email');
+    });
+
+    return 'Test email sent successfully!';
+});
+
+
+
+//// Admin Messages
+Route::get('/admin/messages', [ContactController::class, 'index'])->name('admin.contact.index');
+Route::post('/admin/messages/reply/{id}', [ContactController::class, 'reply'])->name('admin.contact.reply');
+Route::delete('/admin/messages/delete/{id}', [ContactController::class, 'destroy'])->name('admin.contact.delete');
