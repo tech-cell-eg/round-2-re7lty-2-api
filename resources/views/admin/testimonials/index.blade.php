@@ -64,17 +64,13 @@
                                                 </td>
                                                 <td>{{ $testimonial->rating }}/5</td>
                                                 <td>
-                                                    <a href="{{ route('admin.testimonials.edit', $testimonial->id) }}" class="btn btn-warning btn-sm">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
+                                                    <a href="{{ route('admin.testimonials.edit', $testimonial->id) }}" class="btn btn-primary btn-sm">Edit</a>
                                                 </td>
                                                 <td>
-                                                    <form action="{{ route('admin.testimonials.destroy', $testimonial->id) }}" method="POST">
+                                                    <form action="{{ route('admin.testimonials.destroy', $testimonial->id) }}" method="POST" style="display:inline-block;">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm">
-                                                            <i class="fa fa-trash"></i>
-                                                        </button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>
