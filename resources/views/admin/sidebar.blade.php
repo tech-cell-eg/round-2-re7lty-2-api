@@ -31,20 +31,21 @@
 										<li><a href="/admin/addUser">Add User</a></li>
 									</ul>
 								</li>
-								<li><a><i class="fa fa-edit"></i> Categories <span class="fa fa-chevron-down"></span></a>
+								<li><a><i class="fa fa-edit"></i>Trips <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="/admin/addcategory">Add Category</a></li>
-										<li><a href="/admin/categories">Categories List</a></li>
+										<li><a href="/admin/trips">Show Trips</a></li>
+										<li><a href="/admin/trips/create">Add Trip</a></li>
 									</ul>
 								</li>
-								<li><a><i class="fa fa-desktop"></i> Cars <span class="fa fa-chevron-down"></span></a>
+								<li><a><i class="fa fa-desktop"></i> Plans<span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
-										<li><a href="/admin/addcar">Add Car</a></li>
-										<li><a href="/admin/cars">Cars List</a></li>
+										<li><a href="/admin/plans/create">Add plan</a></li>
+										<li><a href="/admin/plans">Plans List</a></li>
 									</ul>
 								</li>
                 <li><a><i class="fa fa-desktop"></i> Testimonials <span class="fa fa-chevron-down"></span></a>
 									<ul class="nav child_menu">
+                                        <li><a href="/admin/testimonials">Show Testimonials</a></li>
 										<li><a href="/admin/testimonials/create">Add Testimonials</a></li>
 									</ul>
 								</li>
