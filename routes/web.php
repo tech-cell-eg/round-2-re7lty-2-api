@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\TestimonialController;
 use App\Http\Controllers\admin\TripController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\admin\ContactController;
+use App\Http\Controllers\admin\PlanController;
 
 
 Route::get('/', function () {
@@ -56,3 +57,9 @@ Route::get('/send-test-email', function () {
 Route::get('/admin/messages', [ContactController::class, 'index'])->name('admin.contact.index');
 Route::post('/admin/messages/reply/{id}', [ContactController::class, 'reply'])->name('admin.contact.reply');
 Route::delete('/admin/messages/delete/{id}', [ContactController::class, 'destroy'])->name('admin.contact.delete');
+
+
+//Admin Plans
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::resource('plans',PlanController::class);
+});
