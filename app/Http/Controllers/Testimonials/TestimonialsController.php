@@ -15,4 +15,5 @@ class TestimonialsController extends Controller
         $testimonials = Testimonial::paginate(10);
         return $this->successResponse('Testimonials fetched successfully', $testimonials);
     }
+    
 }

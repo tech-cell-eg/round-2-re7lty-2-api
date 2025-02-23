@@ -19,4 +19,6 @@ class PlansController extends Controller
         return $this->successResponse('Testimonials fetched successfully', $plans);
 
     }
+    
 }
+
