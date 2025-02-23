@@ -16,7 +16,7 @@ class TestimonialSeeder extends Seeder
         [
             'name' => 'أسامة الأبيض',
             'content' => 'يمكنني القول إنني قمت بأفضل رحلة عائلية على الإطلاق، الفنادق رائعة وخطة السفر ممتازة.',
-            'image' => 'https://example.com/images/osama.jpg',
+            'image' => 'storage/testimonials/user-avatar-03.jpg',
             'rating' => 5,
             'created_at' => now(),
             'updated_at' => now(),
@@ -24,7 +24,7 @@ class TestimonialSeeder extends Seeder
         [
             'name' => 'ماهر عبد اللطيف',
             'content' => 'تقدم شركة رحلاتي خدمات ممتازة لرجال الأعمال، مما ساعدني كثيرًا في رحلتي.',
-            'image' => 'https://example.com/images/maher.jpg',
+            'image' => 'storage/testimonials/user-avatar-02.jpg',
             'rating' => 4,
             'created_at' => now(),
             'updated_at' => now(),
@@ -32,7 +32,7 @@ class TestimonialSeeder extends Seeder
         [
             'name' => 'محمد الأحمد',
             'content' => 'تجربة رائعة! قضيت أفضل إجازة منذ فترة طويلة، أنصح الجميع بشركة رحلاتي.',
-            'image' => 'https://example.com/images/mohammed.jpg',
+            'image' => 'storage/testimonials/user-avatar-01.jpg',
             'rating' => 5,
             'created_at' => now(),
             'updated_at' => now(),
