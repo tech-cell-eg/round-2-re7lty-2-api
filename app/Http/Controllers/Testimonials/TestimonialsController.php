@@ -12,11 +12,7 @@ class TestimonialsController extends Controller
     use ResponseApiTrait;
     public function index()
     {
-        $testimonials = Testimonial::all();
-        return response()->json([
-        'status' => true,
-        'message' => [],
-        'data' => $testimonials
-    ]);
+        $testimonials = Testimonial::paginate(10);
+        return $this->successResponse('Testimonials fetched successfully', $testimonials);
     }
 }

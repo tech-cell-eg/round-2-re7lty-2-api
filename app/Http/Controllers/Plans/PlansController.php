@@ -15,13 +15,8 @@ class PlansController extends Controller
     public function index()
     {
 
-        $plans = Plan::all();
-
-        return response()->json([
-            'status' => true,
-            'message' => [],
-            'data' => $plans
-        ]);
+        $plans = Plan::paginate(10);
+        return $this->successResponse('Testimonials fetched successfully', $plans);
 
     }
 }
