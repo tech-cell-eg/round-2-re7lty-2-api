@@ -38,6 +38,7 @@ class TestimonialSeeder extends Seeder
             'updated_at' => now(),
         ]
     ]);
+    
 
     }
 }
