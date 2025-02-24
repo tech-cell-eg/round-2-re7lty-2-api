@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Trip;
+use Illuminate\Support\Facades\DB;
 
 class TripSeeder extends Seeder
 {
@@ -13,26 +13,31 @@ class TripSeeder extends Seeder
      */
     public function run(): void
     {
-        Trip::create([
-            'name' => 'Trip to Bali',
-            'coast' => 2000.00,
-            'image' => 'bali-trip.jpg',
-            'number_of_days' => 7,
-        ]);
-
-        Trip::create([
-            'name' => 'Trip to Paris',
-            'coast' => 3000.00,
-            'image' => 'paris-trip.jpg',
-            'number_of_days' => 5,
-        ]);
-
-        Trip::create([
-            'name' => 'Trip to Tokyo',
-            'coast' => 2500.00,
-            'image' => 'tokyo-trip.jpg',
-            'number_of_days' => 6,
+        DB::table('trips')->insert([
+            [
+                'name' => 'الرياض',
+                'coast' => 1500.00,
+                'image' => 'storage/trips/Riyadh.png',
+                'number_of_days' => 2,
+            ],
+            [
+                'name' => 'القاهرة',
+                'coast' => 1250.00,
+                'image' => 'storage/trips/Cairo.png',
+                'number_of_days' => 3,
+            ],
+            [
+                'name' => 'دبي',
+                'coast' => 2500.00,
+                'image' => 'storage/trips/dubai-img.png',
+                'number_of_days' => 3,
+            ],
+            [
+                'name' => 'اسطنبول',
+                'coast' => 1500.00,
+                'image' => 'storage/trips/istanbul-img.png',
+                'number_of_days' => 5,
+            ],
         ]);
     }
-
 }
