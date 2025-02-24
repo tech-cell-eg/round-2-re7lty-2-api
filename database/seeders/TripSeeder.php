@@ -39,5 +39,6 @@ class TripSeeder extends Seeder
                 'number_of_days' => 5,
             ],
         ]);
+        
     }
 }
