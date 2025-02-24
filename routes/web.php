@@ -8,6 +8,7 @@ use App\Http\Controllers\admin\TripController;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\PlanController;
+use App\Http\Controllers\admin\SettingController;
 
 
 Route::get('/', function () {
@@ -63,3 +64,8 @@ Route::delete('/admin/messages/delete/{id}', [ContactController::class, 'destroy
 Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('plans',PlanController::class);
 });
+//Admin Settings
+
+Route::get('/admin/settings', [SettingController::class, 'index'])->name('settings.index');
+Route::post('/admin/settings', [SettingController::class, 'update'])->name('settings.update');
+

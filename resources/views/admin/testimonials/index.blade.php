@@ -56,7 +56,7 @@
                                                 <td>{{ Str::limit($testimonial->content, 100) }}</td>
                                                 <td>
                                                     @if ($testimonial->image)
-                                                    <img src="{{ asset('storage/' . $testimonial->image) }}" width="50" height="50" class="img-thumbnail">
+                                                    <img src="{{ asset('/' . $testimonial->image) }}" width="50" height="50" class="img-thumbnail">
 
                                                     @else
                                                         <span>No Image</span>
@@ -83,8 +83,17 @@
                     </div> <!-- x_content -->
                 </div> <!-- x_panel -->
             </div>
+            <div><h1 class="text-center text-uppercase font-weight-bold mt-4">{{ $site_name }}</h1>
+
+                <p class="text-muted font-italic">
+                    <i class="fa fa-envelope text-primary"></i>
+                    Contact us:
+                    <a href="mailto:{{ $site_email }}" class="text-decoration-none text-dark font-weight-bold">{{ $site_email }}</a>
+                </p>
+                </div>
         </div>
-    </div>
+        </div>
+
 </div>
 
 @endsection

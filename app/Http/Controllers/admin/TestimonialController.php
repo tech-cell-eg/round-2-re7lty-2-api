@@ -7,18 +7,22 @@ use Illuminate\Http\Request;
 use App\Models\Testimonial;
 use App\Http\Requests\TestimonialRequest;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Setting;
 
 class TestimonialController extends Controller
 {
-    
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $site_name = Setting::get('site_name', 'Re7lty');
+        $site_email = Setting::get('site_email','admin@example.com');
+
 
         $testimonials = Testimonial::latest()->paginate(10);
-        return view('admin.testimonials.index', compact('testimonials'));
+        return view('admin.testimonials.index', compact('testimonials','site_name','site_email'));
     }
 
     /**
