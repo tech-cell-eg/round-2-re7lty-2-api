@@ -13,6 +13,7 @@ class TripSeeder extends Seeder
      */
     public function run(): void
     {
+        
         DB::table('trips')->insert([
             [
                 'name' => 'الرياض',
