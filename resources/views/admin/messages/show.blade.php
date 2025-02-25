@@ -44,6 +44,7 @@
                                             <tr>
                                                 <th>Full Name</th>
                                                 <th>Email</th>
+                                                <th>Reply Status</th>
                                                 <th>Reply</th>
                                                 <th>Delete</th>
                                             </tr>
@@ -53,6 +54,7 @@
                                                 <tr>
                                                     <td>{{ $message->name }}</td>
                                                     <td>{{ $message->email }}</td>
+                                                    <td>{{ $message->replied ?? 'Not replied yet' }}</td>
                                                     <td>
                                                         <!-- زر الرد -->
                                                         <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#replyModal{{ $message->id }}">
@@ -62,7 +64,7 @@
                                                         <!-- مودال الرد -->
                                                         <div class="modal fade" id="replyModal{{ $message->id }}" tabindex="-1">
                                                             <div class="modal-dialog">
-                                                                <form action="{{ route('admin.contact.reply', $message->id) }}" method="POST">
+                                                                <form action="{{ route('admin.contact.reply', $message->id) }}" method="GET">
                                                                     @csrf
                                                                     <div class="modal-content">
                                                                         <div class="modal-header">
@@ -70,7 +72,7 @@
                                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                                         </div>
                                                                         <div class="modal-body">
-                                                                            <textarea name="reply_message" class="form-control" rows="4" required>{{ old('reply_message') }}</textarea>
+                                                                            <textarea name="replied" class="form-control" rows="4" required>{{ old('reply_message') }}</textarea>
                                                                         </div>
                                                                         <div class="modal-footer">
                                                                             <button type="submit" class="btn btn-success">Send Reply</button>
