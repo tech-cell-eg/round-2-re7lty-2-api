@@ -19,24 +19,26 @@ class ContactController extends Controller
         return view('admin.messages.show', compact('messages'));
     }
 
-    public function reply(Request $request, $id)
-    {
+    public function reply(Request $request, $id){
         $request->validate([
-            'reply' => 'required|string|max:1000',
+            'replied' => 'required|string|max:1000',
         ]);
 
         $contactRequest = ContactRequest::findOrFail($id);
+        $contactRequest->update(['replied' => $request->reply_message]);
 
-        $contactRequest->update(['reply' => $request->reply_message]);
-
-        Mail::raw($request->reply_message, function ($message) use ($contactRequest) {
-            $message->to($contactRequest->email)
-                    ->subject('Reply to your contact request');
+        Mail::send([], [], function ($message) {
+            $message->to('abanoubtalaat555@gmail.com')
+                    ->subject('Test Email')
+                    ->setBody('<h1>Hello, this is a test email!</h1>', 'text/html');
         });
+        // Mail::send($request->reply_message, function ($message) use ($contactRequest) {
+        //     $message->to($contactRequest->email)
+        //             ->subject('Reply to your contact request');
+        // });
 
         return redirect()->back()->with('success', 'Reply sent successfully.');
     }
-
     /**
      * Show the form for creating a new resource.
      */

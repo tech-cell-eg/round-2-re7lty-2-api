@@ -56,7 +56,7 @@ Route::get('/send-test-email', function () {
 
 //// Admin Messages
 Route::get('/admin/messages', [ContactController::class, 'index'])->name('admin.contact.index');
-Route::post('/admin/messages/reply/{id}', [ContactController::class, 'reply'])->name('admin.contact.reply');
+Route::get('/admin/messages/reply/{id}', [ContactController::class, 'reply'])->name('admin.contact.reply');
 Route::delete('/admin/messages/delete/{id}', [ContactController::class, 'destroy'])->name('admin.contact.delete');
 
 

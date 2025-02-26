@@ -17,13 +17,13 @@ class TripSeeder extends Seeder
             [
                 'name' => 'الرياض',
                 'coast' => 1500.00,
-                'image' => 'storage/trips/Riyadh.png',
+                'image' => 'storage/trips/riyadh-img.png',
                 'number_of_days' => 2,
             ],
             [
                 'name' => 'القاهرة',
                 'coast' => 1250.00,
-                'image' => 'storage/trips/Cairo.png',
+                'image' => 'storage/trips/cairo-img.png',
                 'number_of_days' => 3,
             ],
             [
@@ -39,6 +39,7 @@ class TripSeeder extends Seeder
                 'number_of_days' => 5,
             ],
         ]);
-        
+
+
     }
 }
