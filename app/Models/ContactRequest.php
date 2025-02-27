@@ -9,5 +9,9 @@ class ContactRequest extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'subject'];
+    protected $fillable = ['name', 'email', 'subject','replied'];
+    public function markAsReplied($replyMessage)
+    {
+        $this->update(['replied' => $replyMessage]); 
+    }
 }
